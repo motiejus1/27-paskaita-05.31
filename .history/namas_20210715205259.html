@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>27 paskaita</title>
+    <style>
+        .butas {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+
+        .container {
+            display:flex;
+        }
+
+        .laiptine {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+    </style>
+</head>
+<body>
+    <!-- Namas -->
+    <div class="container namas">
+        <!-- <div class="laiptine">
+            <div class="butas">0</div>
+        </div>
+        <div class="laiptine">
+            <div class="butas">0</div>
+            <div class="butas">0</div>
+        </div>
+        <div class="laiptine">
+            <div class="butas">0</div>
+            <div class="butas">0</div>
+            <div class="butas">0</div>
+            <div class="butas">1</div>
+            <div class="butas">2</div>
+        </div>
+        <div class="laiptine">
+            <div class="butas">0</div>
+            <div class="butas">0</div>
+            <div class="butas">0</div>
+            <div class="butas">1</div>
+            <div class="butas">2</div>
+        </div>
+        <div class="laiptine">
+            <div class="butas">0</div>
+            <div class="butas">0</div>
+            <div class="butas">0</div>
+            <div class="butas">1</div>
+            <div class="butas">2</div>
+        </div>
+        <div class="laiptine">
+            <div class="butas">0</div>
+            <div class="butas">0</div>
+            <div class="butas">0</div>
+            <div class="butas">1</div>
+            <div class="butas">2</div>
+        </div>
+        <div class="laiptine">
+            <div class="butas">0</div>
+            <div class="butas">0</div>
+            <div class="butas">0</div>
+            <div class="butas">1</div>
+            <div class="butas">2</div>
+            <div class="butas">0</div>
+            <div class="butas">0</div>
+            <div class="butas">0</div>
+            <div class="butas">1</div>
+            <div class="butas">2</div>
+        </div> -->
+    </div>
+    <script>
+        "use strict";
+        // 1. Susikurti objektą "Namas". 
+        // Objekto kintamieji:
+        // miestas - tekstas,
+        // pastatymo data - datos formatas, 
+        // adresas - tekstas,
+        // laiptinių skaičius - masyvas, 
+        // turintis tiek elementų, kiek yra laiptinių. Pvz: [1,2,3,4]
+        // butų skaičius - masyvas, 
+        // turintis tiek elementų, kiek butų yra laiptinėje.Pvz: [20, 22, 19, 13]
+        // bendras butų skaičius - suskaičiuojamas automatiškai. 
+        // Apskaičiavimui susikurti metodą.
+
+        
+
+        var namas = {
+            miestas: "Vilnius",
+            pastatymoData: new Date("2010"),
+            adresas: "Zalgirio g. 10",
+            laiptiniuSk: [1, 2, 3, "ketvirta", 5, 6, 7], //5 laiptines
+            butuSk: [1, 2, 5], // nurodo kiek butu yra laiptineje
+            bendrasButuSk: 0,
+
+            paleidimas: function() {
+                this.suskaiciuokButus();
+                this.nubraizyk();
+            },
+
+            suskaiciuokButus: function() {
+                var masyvas =  this.butuSk;
+                for (var i=0; i< masyvas.length; i++) {
+                    this.bendrasButuSk += masyvas[i];
+                }
+            },
+
+            nubraizyk: function() {
+                var container = document.querySelector(".container");
+                // Ciklas
+                for (var i = 0 ; i < this.laiptiniuSk.length; i++) {
+                    var laiptine = document.createElement("div");
+                    laiptine.classList.add("laiptine");
+                    laiptine.innerHTML = this.laiptiniuSk[i];
+                    //  butuSk: [1, 2, 5],
+                    // laiptiniuSk : [1,2,3]
+
+                    //laiptiniuSk[0] = 1;
+                    //butuSk[0] = 1
+                    //laiptiniuSk[1] = 2;
+                    //butuSk[1] = 2
+                    ////laiptiniuSk[2] = 3;
+                    //butuSk[2] = 5
+
+
+                    for (var j = 0; j<this.butuSk[i]; j++ ) {
+                        var butas = document.createElement("div");
+                        butas.classList.add("butas");
+                        laiptine.append(butas);
+                    }
+
+                    container.append(laiptine);
+                }
+            }
+        }
+
+
+        namas.paleidimas();
+        console.log(namas);
+    </script>
+</body>
+</html>

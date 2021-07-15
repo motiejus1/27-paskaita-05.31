@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>27 paskaita</title>
+</head>
+<body>
+    <div class="container">
+        
+    </div>
+    <script>
+        "use strict";
+        // Susikurti objektų masyvą:
+        // * Masyve 100 objekto elementų.
+        // * Objekto vidiniai kintamieji: id, vardas.
+        // * Vardas reikšmė = vardas1,vardas2 ir t.t.  
+        // * Id reikšmė = 1, 2 ir t.t.
+
+        //Pagal sukurtą objektų masyvą, sukurti tiek pat div elementų, 
+        // kuriuose išvedamas id ir vardas. 
+        //Kas antras div - mėlynas.
+
+
+
+        //kaip tiek objektu sukurti? +
+        //kaip juos patalpinti i masyva?
+
+
+        //Ciklas
+        // javascript for loop
+
+
+        var testObjektas = {
+            id: 58,
+            vardas: "vardas58"
+        }
+
+        // testObjektas.id;
+        // testObjektas.vardas;
+
+        var masyvas = []; //sukuriamas tuscias masyvas viena karta
+
+        for (var i=0; i < 100; i++) {
+            // Vardas reikšmė = vardas1,vardas2 ir t.t.  
+            // var masyvas = [];
+            var masyvoObjektas = {
+                id: i+1,
+                vardas: "vardas" + (i+1)
+            }; //Sukuria objekta
+            masyvas.push(masyvoObjektas); // patalpina objekta i masyva
+            // console.log(masyvoObjektas);
+        }
+        // 55 iki 65 elementu
+        // Atvaizduos tik lyginius elementus pagal id reiksme
+        for(var i=54; i<65; i++) {
+            // masyvas[i] - vienas objektas
+            //masyvoObjektas.id
+            if(masyvas[i].id % 2 == 0) {
+                console.log(masyvas[i]);
+            }
+        }
+
+
+        // console.log(masyvas);
+
+        // console.log(masyvas[54]);
+        // console.log(masyvas[0]);
+        // console.log(masyvas[99]);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>27 paskaita</title>
+</head>
+<body>
+    <div class="container">
+
+    </div>
+    <script>
+        "use strict";
+        // 1. Susikurti objektą "Namas". 
+        // Objekto kintamieji:
+        // miestas - tekstas,
+        // pastatymo data - datos formatas, 
+        // adresas - tekstas,
+        // laiptinių skaičius - masyvas, 
+        // turintis tiek elementų, kiek yra laiptinių. Pvz: [1,2,3,4]
+        // butų skaičius - masyvas, 
+        // turintis tiek elementų, kiek butų yra laiptinėje.Pvz: [20, 22, 19, 13]
+        // bendras butų skaičius - suskaičiuojamas automatiškai. 
+        // Apskaičiavimui susikurti metodą.
+
+        var container
+
+        var namas = {
+            miestas: "Vilnius",
+            pastatymoData: new Date("2010"),
+            adresas: "Zalgirio g. 10",
+            laiptiniuSk: [1, 2, 3, 4, "penkta"], //5 laiptines
+            butuSk: [1, 1, 1, 2, 21], // nurodo kiek butu yra laiptineje
+            bendrasButuSk: 0,
+
+            paleidimas: function() {
+                this.suskaiciuokButus();
+            },
+
+            suskaiciuokButus: function() {
+                var masyvas =  this.butuSk;
+                for (var i=0; i< masyvas.length; i++) {
+                    this.bendrasButuSk += masyvas[i];
+                }
+            },
+
+            nubraizyk: function() {
+                
+                //atvaizduojam visus butus bet kaip
+                var div = document.createElement("div");
+                // Ciklas
+                for (var i = 0 ; i <this.bendrasButuSk; i++) {
+
+                }
+            }
+        }
+
+
+        namas.paleidimas();
+        console.log(namas);
+    </script>
+</body>
+</html>
